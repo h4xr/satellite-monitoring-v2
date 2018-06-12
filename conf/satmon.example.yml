@@ -1,0 +1,26 @@
+---
+# RHSM Details
+rhsm_username: 'username to use with rhsm'
+rhsm_password: 'password to use with rhsm'
+rhsm_pool: 'the pool to be subscribed to'
+
+# Repository information
+pcp_required_repositories:
+        - "rhel-{{ ansible_distribution_major_version }}-server-rpms"
+        - "rhel-{{ ansible_distribution_major_version }}-extras-rpms"
+        - "rhel-{{ ansible_distribution_major_version }}-optional-rpms"
+
+# PCP Configuration
+pcp_install_autoconf: true
+pcp_install_webui: true
+pcp_install_vector: true
+pcp_enable_pmdas:
+        - apache
+        - postgresql
+        - proc
+
+# PCP GUI packages
+pcp_gui_packages:
+        - pcp-webjs
+        - pcp-webapi
+...
